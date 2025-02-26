@@ -117,7 +117,19 @@
     "searchDescription": "We bring your plans outside of the groupchat",
     "longDescription": "Started in the google GEMINI hackathon. Coming to a phone near you", 
     "links": [{"link": "https://www.instagram.com/reel/DAhFIbZSyEG/", "name": "video", "url": "video-outline.svg" , "urlHover": "video-outline.svg"}]
+  },
+  {
+    "title": "CashCorn",
+    "alias": "cashcorn",
+    "headline": "Hackathon project to solve my popeyes addiction",
+    "timeline": "Feb 2025",
+    "type": "project",
+    "tech": ["Typescript", "TailwindCSS", "Tensorflow"],
+    "searchDescription": "A chrome extension that blocks your impulsive spends.. with a squirrel game",
+    "longDescription": "Started in YYCHacks 2025, CashCorn makes it harder for you to impulsively spend by popping up an annoying squirrel game on your most frequented sites when you click the 'Buy Now' button. We made the Chrome extension using TypeScript and Tailwind CSS and trained our own model to predict whether the URL you're currently visiting has a risk for you to impulsively spend on, based on your financial behaviors. Developed in under 18 hours, got third place.", 
+    "links": [{"link": "https://github.com/rumezaa/finTrack", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}, {"link": "https://devpost.com/software/cashcorn", "name": "check it out", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
   }
+
 
 ]
 

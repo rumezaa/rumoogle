@@ -52,6 +52,7 @@ export default function Search() {
     "Tailwind CSS",
     "Postgres",
     "Ruby on Rails",
+    "Docker",
     "AWS",
     "Nginx",
     "Svelte",
