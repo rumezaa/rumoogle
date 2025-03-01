@@ -6,6 +6,7 @@ import projects from "../../data/projects.json";
 import experiences from "../../data/experience.json";
 import life from "../../data/life.json";
 import whyHire from "../../data/why.json";
+import Image from "next/image";
 
 export default function Search() {
   const [isHover, setIsHover] = useState(false);
@@ -60,7 +61,7 @@ export default function Search() {
     "NumPy",
     "Matplotlib",
     "NLTK",
-    "Kivy"
+    "Kivy",
   ];
 
   useEffect(() => {
@@ -106,9 +107,12 @@ export default function Search() {
           <h2 className="text-white opacity-50">{data.searchDescription}</h2>
         </div>
 
-        <div
-          className="bg-no-repeat bg-cover w-24 h-24 rounded-md"
-          style={{ backgroundImage: `url(search-img/${data.alias}-icon.png)` }}
+        <Image
+          src={`/search-img/${data.alias}-icon.png`}
+          alt={`${data.alias} icon`}
+          width={96}
+          height={90}
+          className="rounded-md w-24 h-24"
         />
       </div>
     );
@@ -129,12 +133,15 @@ export default function Search() {
               />
             </div>
 
-            <div
-              className="bg-no-repeat bg-contain bg-center w-full h-2/5 md:h-3/5 rounded-lg"
-              style={{
-                backgroundImage: `url(search-img/${data.alias}-banner.png)`,
-              }}
-            />
+            <div className="relative w-full h-2/5 md:h-3/5 rounded-lg overflow-hidden">
+              <Image
+                src={`/search-img/${data.alias}-banner.png`}
+                alt={`${data.alias} banner`}
+                layout="fill" // Ensures it takes up the full parent size
+                objectFit="contain"
+                priority
+              />
+            </div>
 
             <div className="flex flex-col w-full items-center justify-start h-3/5 p-4 gap-y-2 relative">
               <h2 className="w-full text-2xl">{data.title}</h2>
@@ -307,6 +314,8 @@ export default function Search() {
 
           {displayQuery !== "why-hire-a-rumeza" && (
             <div className="hidden w-1/3 p-2 h-[40rem] border-[0.05rem] border-white border-opacity-30 shadow-xl rounded-lg md:flex flex-col gap-y-3 ">
+              
+              
               <img
                 src={
                   displayQuery == "life"

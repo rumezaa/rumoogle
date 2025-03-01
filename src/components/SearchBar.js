@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function SearchBar({ query }) {
   const [search, setSearch] = useState("Search (Rum)oogle");
@@ -106,7 +107,7 @@ export default function SearchBar({ query }) {
           </div>
         </div>
 
-        {showSearch && (
+        {/* {showSearch && (
           <div className="w-full">
             <div className="border-b border-accent-text mx-4" />
             <h2 className="px-4 font-semibold text-md text-accent-text mt-2">
@@ -129,6 +130,37 @@ export default function SearchBar({ query }) {
               </Link>
             ))}
           </div>
+        )} */}
+
+        {showSearch && (
+          <AnimatePresence>
+            <motion.div
+              className="w-full overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <div className="border-b border-accent-text mx-4" />
+              <h2 className="px-4 font-semibold text-md text-accent-text mt-2">
+                Trending searches
+              </h2>
+              {searches.map((item, idx) => (
+                <Link
+                  className="px-4 flex flex-row items-center w-full gap-x-2 text-[#E5DFFF] py-2 rounded-lg hover:bg-white hover:bg-opacity-5 transition duration-200"
+                  href={`/search?q=${encodeURIComponent(item.param)}`}
+                  key={idx}
+                  onClick={() => setShowSearch(false)}
+                >
+                  <div
+                    className="bg-no-repeat w-5 h-3 bg-cover"
+                    style={{ backgroundImage: "url(icons/trending.svg)" }}
+                  />
+                  {item.search}
+                </Link>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         )}
       </div>
     </div>
