@@ -116,7 +116,7 @@
     "type": "startup",
     "searchDescription": "We bring your plans outside of the groupchat",
     "longDescription": "Started in the google GEMINI hackathon. Coming to a phone near you", 
-    "links": [{"link": "https://www.instagram.com/reel/DAhFIbZSyEG/", "name": "video", "url": "video-outline.svg" , "urlHover": "video-outline.svg"}]
+    "links": [{"link": "https://www.instagram.com/reel/DAhFIbZSyEG/", "name": "video", "url": "video-outline.svg" , "urlHover": "video-outline.svg"}, { "link": "https://docs.google.com/presentation/d/1K83ucHuosKlDPUyj01ft-aEItU9LkPQdgR5_qlXbZpg/edit?slide=id.PhwpQwPs#slide=id.PhwpQwPs", "name": "pitch deck", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
   },
   {
     "title": "CashCorn",
