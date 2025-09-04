@@ -19,29 +19,34 @@ export default function About() {
         </h2>
 
         <h2>
-          Currently, I’m working as a Health Interfaces Development Intern at{" "}
+          This past year, I worked as a Health Interfaces Development Intern at{" "}
           <span className="text-[#DED7FC] hover:opacity-70  transform transition-all duration-300">
             <Link href={"https://www.symbioticai.ca/"} target={"_blank"}>
               Symbiotic AI
             </Link>
           </span>{" "}
           , a health tech startup using AI-driven medical insights to help
-          doctors approach revascularization decision for patients suffering from cronery artery disease. I’m working on developing V1 of
-          the clinical insights software to be integrated into healthcare systems.
+          doctors approach revascularization decision for patients suffering from cronery artery disease, and as a Production Engineer at{" "}
+          <span className="text-[#DED7FC] hover:opacity-70  transform transition-all duration-300">
+            <Link href={"https://mlh.io/"} target={"_blank"}>
+             Meta x MLH.
+            </Link>
+          </span>{" "}
           I won over $300K in scholarships. I have a tradition of building at
-          least one large-scale project every year, this year I’m creating{" "}
+          least one large-scale project every year, this year I’m founding{" "}
           <span>
             <Link
               className="inline-flex items-center hover:underline hover:opacity-70 text-[#DED7FC] transform transition-all duration-300 gap-x-1"
-              href="/search?q=rumezas-projects&p=meetmidway"
+              href="https://www.jointhearchive.com/"
             >
-              Meetmidway.
+              The Archive
               <div
                 className="bg-no-repeat bg-cover w-4 h-4"
                 style={{ backgroundImage: `url("icons/link.svg")` }}
               />
             </Link>
-          </span>
+          </span>, a project that is so  <span className="italic">me</span>
+          
         </h2>
 
         <h2>
