@@ -281,6 +281,7 @@ export default function Search() {
                     understanding of how people around the world navigate and
                     overcome challenges.
                   </h2>
+                  
 
                   {!showMore && (
                     <div className="bg-gradient-to-t from-dark-purple-300 via-dark-purple-200 via-dark-purple-100 to-transparent absolute -bottom-6 h-10 w-full" />
@@ -314,7 +315,6 @@ export default function Search() {
 
           {displayQuery !== "why-hire-a-rumeza" && (
             <div className="hidden w-1/3 p-2 h-[40rem] border-[0.05rem] border-white border-opacity-30 shadow-xl rounded-lg md:flex flex-col gap-y-3 ">
-              
               
               <img
                 src={
