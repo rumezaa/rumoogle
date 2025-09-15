@@ -140,6 +140,7 @@ export default function Header({ setShowMailer }) {
           />
         </div>
 
+
         <div
           style={{ backgroundImage: "url(head-shot.png)" }}
           onClick={() => {
