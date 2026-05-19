@@ -233,7 +233,7 @@ export default function Search() {
                   src={
                     displayQuery == "life"
                       ? "search-img/life.jpeg"
-                      : "https://github-readme-stats.vercel.app/api/top-langs/?username=rumezaa&layout=compact&theme=nightowl&hide_border=true&exclude_repo=the-www-blog,clean-water-foundation&langs_count=6"
+                      : "/api/github-stats"
                   }
                   alt="rumezaa"
                   className="w-full h-[17rem] rounded-t-lg"

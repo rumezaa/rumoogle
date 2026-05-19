@@ -1,5 +1,6 @@
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { useTabs } from "@/context/TabContext";
 
 export default function TabBar() {
@@ -54,10 +55,20 @@ export default function TabBar() {
                 : "bg-dark-purple-300 text-accent-text hover:bg-dark-purple-100 hover:text-white"
             }`}
           >
-            <div
-              className="bg-no-repeat bg-cover w-3 h-3 flex-shrink-0 opacity-50"
-              style={{ backgroundImage: "url(icons/key.svg)" }}
-            />
+            {tab.type === "item" && tab.data?.alias ? (
+              <Image
+                src={`/search-img/${tab.data.alias}-icon.png`}
+                alt=""
+                width={14}
+                height={14}
+                className="rounded-sm flex-shrink-0 object-cover"
+              />
+            ) : (
+              <div
+                className="bg-no-repeat bg-cover w-3 h-3 flex-shrink-0 opacity-50"
+                style={{ backgroundImage: "url(icons/key.svg)" }}
+              />
+            )}
             <span className="truncate flex-1 text-xs">{tab.title}</span>
             {tab.id !== "search" && (
               <span
