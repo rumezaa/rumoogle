@@ -8,8 +8,14 @@
     "searchDescription": "A mobile app that combines community-driven features to help individuals suffering from eating disorders recover · Technovation Girls Semifinalist (Top 8 in Canada) · Python · Kivy · Sentiment Analysis",
     "longDescription": "Using Python Kivy, I developed an Android mobile application, Blu3Whale ED, designed to support individuals with eating disorders. The app integrates the MealDB API to provide an in-app recipe search engine tailored to user input and leverages Firebase for user authentication and a public chat forum. I implemented Python’s NLTK library to create a Naïve Bayes algorithm that classifies user moods (e.g., happy, sad) based on text inputs found in the library's lexicon dictionary and visualized this data using matplotlib, enabling users to track their emotional well-being in their recovery. The app achieved recognition as a Top 8 Semifinalist in Canada for the Technovation Girls Competition.",
     "tech": ["Python", "Matplotlib", "Numpy", "NLTK"],
-    "links": [{"link": "https://github.com/rumezaa/blu3whale", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}]
-
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/blu3whale",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      }
+    ]
   },
   {
     "title": "YYC Tech Connect",
@@ -18,9 +24,16 @@
     "alias": "tech-connect",
     "timeline": "Feb 2022 - Jun 2022",
     "searchDescription": "A calendar aggregator made with React and Flask to centralize ongoing events in the YYC tech sector using the Eventbrite API - I'm banned from this API now :(",
-    "longDescription": "I developed the backend for YYC Tech Connect, utilizing Flask to manage CRUD operations for the Eventbrite API. The frontend was built with React and Material-UI components to deliver a seamless user experience.", 
+    "longDescription": "I developed the backend for YYC Tech Connect, utilizing Flask to manage CRUD operations for the Eventbrite API. The frontend was built with React and Material-UI components to deliver a seamless user experience.",
     "tech": ["Flask", "EventBrite", "React.js", "Material UI"],
-    "links": [{"link": "https://github.com/rumezaa/mockup", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg" }]
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/mockup",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      }
+    ]
   },
   {
     "title": "Winter Go",
@@ -29,9 +42,16 @@
     "headline": "Hackathon team saves Calgary's tourism scene",
     "timeline": "Feb 2023",
     "searchDescription": "A web-app designed to recommend tourists locations and activities based on the weather. Top 3 project for YYCHacks 2023 · TailwindCSS · Express.js · Figma ",
-    "longDescription": "We created an Express.js app that leveraged the OpenAI API to recommend activities and tourist destinations in a user's vicinity depending on the weather conditions and temperature. We used Tailwind for styling.", 
+    "longDescription": "We created an Express.js app that leveraged the OpenAI API to recommend activities and tourist destinations in a user's vicinity depending on the weather conditions and temperature. We used Tailwind for styling.",
     "tech": ["Express.js", "Tailwind CSS", "An API I forgot the name of"],
-    "links": [{"link": "https://hack2023.vercel.app/", "name": "check it out", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
+    "links": [
+      {
+        "link": "https://hack2023.vercel.app/",
+        "name": "check it out",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      }
+    ]
   },
   {
     "title": "Torpedo",
@@ -40,8 +60,21 @@
     "headline": "Highschoolers undergo the startup cannon event ",
     "timeline": "Mar 2023",
     "searchDescription": "Landing page for Torpedo, a mentorship platform aimed at connecting young talent with mentorship and skill activation opportunities · Labs Batch X",
-    "longDescription": "I made Torpedo's waitlist site using React, Tailwind CSS, and Google APIs to manage waitlist data. Building Torpedo was an insightful journey into the realm of startups, and it truly fortified my interest in creating software that can scale to impact a vast number of people. This experience also pivoted some of my interests toward UI/UX design and creating pitch decks for promising products.", 
-    "links": [{"link": "https://main--spiffy-capybara-00bee2.netlify.app/", "name": "check it out", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}, {"link": "https://github.com/rumezaa/jointorpedo.Inc", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}]
+    "longDescription": "I made Torpedo's waitlist site using React, Tailwind CSS, and Google APIs to manage waitlist data. Building Torpedo was an insightful journey into the realm of startups, and it truly fortified my interest in creating software that can scale to impact a vast number of people. This experience also pivoted some of my interests toward UI/UX design and creating pitch decks for promising products.",
+    "links": [
+      {
+        "link": "https://main--spiffy-capybara-00bee2.netlify.app/",
+        "name": "check it out",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      },
+      {
+        "link": "https://github.com/rumezaa/jointorpedo.Inc",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      }
+    ]
   },
   {
     "title": "Alexa Connect",
@@ -50,8 +83,21 @@
     "headline": "18 somthing-year-olds pitch to Amazon Alexa (successfully)",
     "type": "consultancy",
     "searchDescription": "An Omegle and house party hybrid app recommendation to Amazon Alexa which matches users based on their shared interests and uses Alexa to guide them through an engaging activity · Consulting",
-    "longDescription": "Consulted for Amazon Alexa and had the opportunity to pitch the recommendation to executives. We also built a prototype using Figma.", 
-    "links": [{"link": "https://www.figma.com/proto/DEihgj9v451Bmrza6rXFYs/Alexa-Connect-Mockup?node-id=54-232&p=f&t=vEFc2vQpE4MfEfAK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=54%3A232", "name": "check it out", "url": "link-outline.svg" , "urlHover": "link-outline.svg"},{ "link": "https://drive.google.com/file/d/1IGW4HPWXcz-xMoIpjDRW8B4vE3srwIzk/view?usp=sharing", "name": "pitch deck", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
+    "longDescription": "Consulted for Amazon Alexa and had the opportunity to pitch the recommendation to executives. We also built a prototype using Figma.",
+    "links": [
+      {
+        "link": "https://www.figma.com/proto/DEihgj9v451Bmrza6rXFYs/Alexa-Connect-Mockup?node-id=54-232&p=f&t=vEFc2vQpE4MfEfAK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=54%3A232",
+        "name": "check it out",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      },
+      {
+        "link": "https://drive.google.com/file/d/1IGW4HPWXcz-xMoIpjDRW8B4vE3srwIzk/view?usp=sharing",
+        "name": "pitch deck",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      }
+    ]
   },
 
   {
@@ -61,8 +107,21 @@
     "headline": "Software Engineer trys turning into an Electrical Engineer (impossible edition) ",
     "type": "research",
     "searchDescription": "A self-sustaining battery pack powered by radio waves and solar energy that provides a continuous and reliable stream of electricity · Research · Moonshot Project",
-    "longDescription": "A moonshot project refers to an ambitious, exploratory, and groundbreaking initiative with high risk but equally high potential impact. My partner and I were exploring the sustainable energy space when we decided to deep dive into the world of wireless electricity. Bumblee was a pivot from a larger-scale idea of implementing a completely wireless energy grid by utilizing MRC (Magnetic Resonance Coupling) technology and enhancing its efficiency with radio wave energy harvesters. Our thinking sought to solve the issue of vulnerable physical infrastructure affecting access to electricity in remote regions and areas impacted by severe natural disasters. We pivoted to the Bumblee battery pack after understanding the associated risks of a completely wireless grid (although we are not far from a future where this exists). Instead, we implemented our previous system—without coupling—on a smaller scale, where energy is supplied through photovoltaic technology and radio wave energy harvesters.", 
-    "links": [{"link": "https://rumeza06.wixstudio.com/bumblebee", "name": "check it out", "url": "link-outline.svg" , "urlHover": "link-outline.svg"},{ "link": "https://docs.google.com/presentation/d/1wipk_objn23PDLHS2NRPPsxt2fv0li9wZbaUScqSdtw/edit?usp=sharing", "name": "pitch deck", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
+    "longDescription": "A moonshot project refers to an ambitious, exploratory, and groundbreaking initiative with high risk but equally high potential impact. My partner and I were exploring the sustainable energy space when we decided to deep dive into the world of wireless electricity. Bumblee was a pivot from a larger-scale idea of implementing a completely wireless energy grid by utilizing MRC (Magnetic Resonance Coupling) technology and enhancing its efficiency with radio wave energy harvesters. Our thinking sought to solve the issue of vulnerable physical infrastructure affecting access to electricity in remote regions and areas impacted by severe natural disasters. We pivoted to the Bumblee battery pack after understanding the associated risks of a completely wireless grid (although we are not far from a future where this exists). Instead, we implemented our previous system—without coupling—on a smaller scale, where energy is supplied through photovoltaic technology and radio wave energy harvesters.",
+    "links": [
+      {
+        "link": "https://rumeza06.wixstudio.com/bumblebee",
+        "name": "check it out",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      },
+      {
+        "link": "https://docs.google.com/presentation/d/1wipk_objn23PDLHS2NRPPsxt2fv0li9wZbaUScqSdtw/edit?usp=sharing",
+        "name": "pitch deck",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      }
+    ]
   },
   {
     "title": "Renew",
@@ -72,8 +131,27 @@
     "type": "project",
     "tech": ["React Native", "Nativewind", "Firebase"],
     "searchDescription": "A mobile app built to create a pipeline for charities and nonprofits to gain the supplies they need to scale their missions · Technovation Girls Quarterfinalist",
-    "longDescription": "I created Renew, a platform that organizes the allocation of excess donations to charities and non-profits. My research in the fashion sustainability space and interviews with niche non-profits revealed that 80% of clothing donations are exported overseas to developing countries, rather than being distributed within our own economy to help scale local charities, non-profits, or aid people in need. I developed a mobile app solution to address this issue by creating a platform that organizes the allocation of excess donations to charities and non-profits. I developed the platform in a week using React Native, Firebase, and Nativewind CSS. I developed a Calendly variation from scratch for scheduling functionality in the app, a direct messaging system, and a browsing page. I have partnered with the local non-profit Good-Neighbor, planning to utilize the app to increase their garment supply and reach more people in need.", 
-    "links": [{"link": "https://drive.google.com/file/d/1Gax_ufzoxFZFPidcb58AGp1aJl0Kw3uU/view?ths=true", "name": "business plan", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}, {"link": "https://youtu.be/Qiv7s6PP1yE", "name": "video", "url": "video-outline.svg" , "urlHover": "video-outline.svg"}, {"link": "https://github.com/rumezaa/Renew", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}]
+    "longDescription": "I created Renew, a platform that organizes the allocation of excess donations to charities and non-profits. My research in the fashion sustainability space and interviews with niche non-profits revealed that 80% of clothing donations are exported overseas to developing countries, rather than being distributed within our own economy to help scale local charities, non-profits, or aid people in need. I developed a mobile app solution to address this issue by creating a platform that organizes the allocation of excess donations to charities and non-profits. I developed the platform in a week using React Native, Firebase, and Nativewind CSS. I developed a Calendly variation from scratch for scheduling functionality in the app, a direct messaging system, and a browsing page. I have partnered with the local non-profit Good-Neighbor, planning to utilize the app to increase their garment supply and reach more people in need.",
+    "links": [
+      {
+        "link": "https://drive.google.com/file/d/1Gax_ufzoxFZFPidcb58AGp1aJl0Kw3uU/view?ths=true",
+        "name": "business plan",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      },
+      {
+        "link": "https://youtu.be/Qiv7s6PP1yE",
+        "name": "video",
+        "url": "video-outline.svg",
+        "urlHover": "video-outline.svg"
+      },
+      {
+        "link": "https://github.com/rumezaa/Renew",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      }
+    ]
   },
   {
     "title": "Nurture",
@@ -81,10 +159,23 @@
     "headline": "Hackathon team attempts to align generational communication gap",
     "timeline": "Aug 2024",
     "type": "project",
-    "tech": ["Flask"," React.js", "OpenAI API"],
-    "searchDescription": "A web app designed to bring the functional family therapy online and bridge generational communication gaps · Albert Health Hacks", 
+    "tech": ["Flask", " React.js", "OpenAI API"],
+    "searchDescription": "A web app designed to bring the functional family therapy online and bridge generational communication gaps · Albert Health Hacks",
     "longDescription": "Inspired by generational communication between parents and children, we created a tool that allows real-time monitoring of your communication with family members, partners, or friends. The tool helps assess how they'll receive your message and suggests the best way to communicate based on their attitudes. Developed prototype in <24 hours using React JS, TailwindCSS, Python, and Open AI API. This app was developed for Albert Health Hacks.",
-    "links": [{"link": "https://www.youtube.com/watch?v=V7ieDzRjtcY&t=9s", "name": "video", "url": "video-outline.svg" , "urlHover": "video-outline.svg"}, {"link": "https://github.com/rumezaa/nurture", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}]
+    "links": [
+      {
+        "link": "https://www.youtube.com/watch?v=V7ieDzRjtcY&t=9s",
+        "name": "video",
+        "url": "video-outline.svg",
+        "urlHover": "video-outline.svg"
+      },
+      {
+        "link": "https://github.com/rumezaa/nurture",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      }
+    ]
   },
   {
     "title": "Muto",
@@ -92,10 +183,23 @@
     "headline": "University sweats build a workforce reintegration tool under 24 hours",
     "timeline": "Nov 2024",
     "type": "project",
-    "tech": ["Next.js","Firebase", "Tailwind"],
+    "tech": ["Next.js", "Firebase", "Tailwind"],
     "searchDescription": "A Next.js app aimed at providing the vulnerable population with the resources and opportunities they need to reintegrate into society · Hack the Change 2024",
-    "longDescription": "Our platform onboard vulnerable individuals by listening to their stories and struggles. We use a custom TensorFlow model with 75 input nodes and dual 16-node hidden layers to analyze keyword frequency and emotions in user narratives. This allows us to generate tailored resource, job, and mentor suggestions based on users' experiences and skills. Developed in under 24 hours for Hack the Change 2024, we also engaged with our target demographic (the homeless) to gather feedback on our product.", 
-    "links": [{"link": "https://github.com/rumezaa/Hackthechange", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}, {"link": "https://hackthechange-lime.vercel.app/", "name": "check it out", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
+    "longDescription": "Our platform onboard vulnerable individuals by listening to their stories and struggles. We use a custom TensorFlow model with 75 input nodes and dual 16-node hidden layers to analyze keyword frequency and emotions in user narratives. This allows us to generate tailored resource, job, and mentor suggestions based on users' experiences and skills. Developed in under 24 hours for Hack the Change 2024, we also engaged with our target demographic (the homeless) to gather feedback on our product.",
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/Hackthechange",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      },
+      {
+        "link": "https://hackthechange-lime.vercel.app/",
+        "name": "check it out",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      }
+    ]
   },
   {
     "title": "Dogma AI",
@@ -105,18 +209,44 @@
     "type": "project",
     "tech": ["Next.js", "Tailwind", "Tavus API"],
     "searchDescription": "An AI tutor you can join a call with to explain topics ranging from complicated school problems to real life advice · (not responsible for anything bad AI says <3)",
-    "longDescription": "I was one of the 32 people selected to participate in the Hunger Games-style Cohere x Open Sesame Hackathon in Toronto. I flew out for the sole purpose of attending because hackathons make me feel things. We created an AI tutor using the Tavus API that you can join a call with. Simply upload a document ranging from complicated math problems to 2025 mood boards and have a real-time conversation with our assistant.", 
-    "links": [{"link": "https://github.com/rumezaa/cohere-opensesame", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}, {"link": "https://drive.google.com/file/d/1YPrVSsCgJ8JRlvLQXzU20SsFIBdKSkDx/view", "name": "team", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
+    "longDescription": "I was one of the 32 people selected to participate in the Hunger Games-style Cohere x Open Sesame Hackathon in Toronto. I flew out for the sole purpose of attending because hackathons make me feel things. We created an AI tutor using the Tavus API that you can join a call with. Simply upload a document ranging from complicated math problems to 2025 mood boards and have a real-time conversation with our assistant.",
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/cohere-opensesame",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      },
+      {
+        "link": "https://drive.google.com/file/d/1YPrVSsCgJ8JRlvLQXzU20SsFIBdKSkDx/view",
+        "name": "team",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      }
+    ]
   },
   {
     "title": "Meetmidway",
     "alias": "meetmidway",
-    "headline": "Pre-successul CS sweats compress a 2-month hackathon project into 2 weeks of grind",
-    "timeline": "present",
-    "type": "startup",
-    "searchDescription": "We bring your plans outside of the groupchat",
-    "longDescription": "Started in the google GEMINI hackathon. Coming to a phone near you", 
-    "links": [{"link": "https://www.instagram.com/reel/DAhFIbZSyEG/", "name": "video", "url": "video-outline.svg" , "urlHover": "video-outline.svg"}, { "link": "https://docs.google.com/presentation/d/1K83ucHuosKlDPUyj01ft-aEItU9LkPQdgR5_qlXbZpg/edit?slide=id.PhwpQwPs#slide=id.PhwpQwPs", "name": "pitch deck", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
+    "headline": "Pre-successful CS sweats compress a 2-month hackathon project into 2 weeks of grind",
+    "timeline": "August 2024",
+    "type": "project",
+    "searchDescription": "Spend less time planning and more time making memories",
+    "longDescription": "Started in the Google Gemini hackathon. Meetmidway helps friend groups find the optimal midpoint for hangouts by factoring in everyone's location and preferences, then uses Google Gemini to generate a full itinerary — so plans actually leave the group chat.",
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/meet-midway",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      },
+      {
+        "link": "https://docs.google.com/presentation/d/1K83ucHuosKlDPUyj01ft-aEItU9LkPQdgR5_qlXbZpg/edit?slide=id.PhwpQwPs#slide=id.PhwpQwPs",
+        "name": "pitch deck",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      }
+    ]
   },
   {
     "title": "CashCorn",
@@ -126,10 +256,56 @@
     "type": "project",
     "tech": ["Typescript", "TailwindCSS", "Tensorflow"],
     "searchDescription": "A chrome extension that blocks your impulsive spends.. with a squirrel game",
-    "longDescription": "Started in YYCHacks 2025, CashCorn makes it harder for you to impulsively spend by popping up an annoying squirrel game on your most frequented sites when you click the 'Buy Now' button. We made the Chrome extension using TypeScript and Tailwind CSS and trained our own model to predict whether the URL you're currently visiting has a risk for you to impulsively spend on, based on your financial behaviors. Developed in under 18 hours, got third place.", 
-    "links": [{"link": "https://github.com/rumezaa/finTrack", "name": "github", "url": "github-outline.svg" , "urlHover": "github-outline.svg"}, {"link": "https://devpost.com/software/cashcorn", "name": "check it out", "url": "link-outline.svg" , "urlHover": "link-outline.svg"}]
+    "longDescription": "Started in YYCHacks 2025, CashCorn makes it harder for you to impulsively spend by popping up an annoying squirrel game on your most frequented sites when you click the 'Buy Now' button. We made the Chrome extension using TypeScript and Tailwind CSS and trained our own model to predict whether the URL you're currently visiting has a risk for you to impulsively spend on, based on your financial behaviors. Developed in under 18 hours, got third place.",
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/finTrack",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      },
+      {
+        "link": "https://devpost.com/software/cashcorn",
+        "name": "check it out",
+        "url": "link-outline.svg",
+        "urlHover": "link-outline.svg"
+      }
+    ]
+  },
+  {
+    "title": "Peony",
+    "alias": "peony",
+    "headline": "An AI-powered website cloning service that creates pixel-perfect replicas",
+    "timeline": "2025",
+    "type": "project",
+    "tech": ["Python", "FastAPI", "Playwright", "Next.js", "Anthropic API"],
+    "searchDescription": "Clone any website with AI: paste a URL, get back the HTML",
+    "longDescription": "Peony is a website cloning service that uses AI to generate near pixel-perfect replicas of any site. Paste in a URL and it scrapes the page with Playwright via Browserbase, runs the design through Anthropic's API for analysis, and returns clean HTML with styles preserved. Supports single-page and multi-page cloning with real-time progress streaming. Built with FastAPI on the backend and Next.js on the frontend.",
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/peony",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      }
+    ]
+  },
+  {
+    "title": "Audibly",
+    "alias": "audibly",
+    "headline": "Somehow programming a real-time ASL translation model <24h",
+    "timeline": "Feb 2026",
+    "type": "project",
+    "tech": ["Python", "TensorFlow", "MediaPipe", "VOSK"],
+    "searchDescription": "Real-time sign language and speech-to-text translation for video calls",
+    "longDescription": "Audibly is an accessibility app that translates American Sign Language and speech to text in real time, outputting to a virtual camera you can plug into Zoom, Teams, or Google Meet. The ASL side uses TensorFlow and MediaPipe for hand gesture and pose detection across 9 recognized signs, with a majority-vote pipeline and text-to-speech output. The speech-to-text side runs on VOSK with support for 10+ languages. Both modes render live captions onto a virtual camera feed so the person on the other end can read along.",
+    "links": [
+      {
+        "link": "https://github.com/rumezaa/audibly",
+        "name": "github",
+        "url": "github-outline.svg",
+        "urlHover": "github-outline.svg"
+      }
+    ]
   }
-
-
 ]
-

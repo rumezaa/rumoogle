@@ -49,15 +49,6 @@
     "type": "community",
     "searchDescription": "I had a dream to start a grant earlier this year. 2 months ago it happened. we shot the film, in 2 weeks, released and went viral EVERYWHERE it was awesome",
     "longDescription": "ill fill this in when i've proceessed i've given out $6k lmao"
-  },
-  {
-    "title": "Community",
-    "alias": "mlh",
-    "headline": "I actually like production engineering",
-    "timeline": "Jun 2025 - Sept 2025",
-    "type": "community",
-    "searchDescription": "A summer of rediscovering my love for tech and finding a new passion in production engineering",
-    "longDescription": "The summer of 2025 was a summer I wanted to spend for myself — something I honestly hadn’t done in years. My past summers had always been a back-to-back grind of internships or chasing someone else’s vision. This year, I flipped the script. I decided to pivot in my niche as a software engineer and even started a grant project (stay tuned for my post about The Archive 👀).\n That said, I still needed an outlet for my engineering side. I joined the Meta x MLH Production Engineering Fellowship — not out of obligation, but to finally sit with the question: what do I actually want to do with my career? Just a few months prior, during a nine-month internship, I had scratched the surface of production engineering through Docker and CI/CD pipelines. But in the fellowship, every week unlocked a new wave of excitement. I was brushing up on fundamentals I hadn’t touched in years, and it felt like rediscovering why I loved tech in the first place. Production engineers are cool. Super cool. And, honestly, writing Bash scripts made me feel like I was hacking into a mainframe 🤓. \nThrough hands-on learning, I explored Linux fundamentals, databases, testing, containerization, and CI/CD. I had the privilege to learning directly from Meta engineers who shared what it’s really like to build reliable, scalable systems that serve billions of people aaand what its like to work at Meta!\nSome highlights from the summer:\n- Deploying a project on a CentOS server using a DigitalOcean VPS\n- Revisiting my love Nginx and actually understanding what the flip it does\n- Building CI/CD pipelines for automated testing, alerting, and redeployment\n- Setting up Prometheus/Grafana dashboards for system monitoring (these were so cool)\n- Finally doing a systems design interview! Twas so insightful\n\nThis was a summer of resetting, exploring and finding genuine excitement again - my fellowship absolutely appended onto that :)!"
   }
 ]
 

@@ -1,23 +1,18 @@
 "use client";
 import Header from "@/components/Header";
-import "./globals.css"; // Your global styles
-import { Roboto, Ropa_Sans } from "next/font/google";
+import TabBar from "@/components/TabBar";
+import { TabProvider } from "@/context/TabContext";
+import "./globals.css";
+import { Ropa_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import Mailer from "@/components/Mailer";
 import { useState, Suspense } from "react";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-roboto", // Optional for CSS variable
-});
-
 const ropaSans = Ropa_Sans({
   subsets: ["latin"],
-  weight: ["400"], // Ropa Sans has fewer weight options
+  weight: ["400"],
   style: ["normal", "italic"],
-  variable: "--font-ropa-sans", // Optional for CSS variable
+  variable: "--font-ropa-sans",
 });
 
 export default function RootLayout({ children }) {
@@ -43,28 +38,22 @@ export default function RootLayout({ children }) {
           })(window,document,'script','dataLayer','GTM-TRZSNGGH');
         `,
           }}
-        ></script>
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-8RG9NY419T"
-        ></script>
+        />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RG9NY419T" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8RG9NY419T');`,
           }}
-        ></script>
-
+        />
         <meta property="og:title" content="Rumoogle" />
         <meta property="og:description" content="everything you'll ever need" />
         <meta property="og:image" content="/Banner.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image:type" content="image/png"/>
+        <meta name="twitter:image:type" content="image/png" />
         <meta name="twitter:title" content="Rumoogle" />
         <meta name="twitter:description" content="my typa g*ogle" />
         <meta name="twitter:image" content="https://rumeza.ca/Banner.png" />
@@ -76,40 +65,35 @@ export default function RootLayout({ children }) {
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
+          />
         </noscript>
-        <Suspense fallback={<div>Loading Header...</div>}>
-          <Header setShowMailer={setIsOpen} />
-        </Suspense>
-
-        <main className="flex-grow flex">
-          <div className="w-full">
-            <Suspense fallback={<div>Loading Body...</div>}>
-              {children}
-            </Suspense>
-          </div>
-        </main>
-
+        <TabProvider>
+          <Suspense><TabBar /></Suspense>
+          <Suspense fallback={<div>Loading Header...</div>}>
+            <Header setShowMailer={setIsOpen} />
+          </Suspense>
+          <main className="flex-grow flex">
+            <div className="w-full">
+              <Suspense fallback={<div>Loading Body...</div>}>
+                {children}
+              </Suspense>
+            </div>
+          </main>
+        </TabProvider>
         {isOpen && (
           <Suspense fallback={<div>Loading Mailer...</div>}>
             <div
               className={`${
                 isExpand
                   ? "fixed inset-0 bg-gray-900 bg-opacity-70 z-40 flex items-center justify-center"
-                  : "fixed inset-0 bg-gray-900 bg-opacity-7 flex items-center justify-center md:block  md:bg-transparent md:inset-auto md:bottom-0 md:right-0 shadow-2xl"
-              } `}
+                  : "fixed inset-0 bg-gray-900 bg-opacity-7 flex items-center justify-center md:block md:bg-transparent md:inset-auto md:bottom-0 md:right-0 shadow-2xl"
+              }`}
               style={{ zIndex: 100 }}
             >
-              <Mailer
-                isExpand={isExpand}
-                isOpen={isOpen}
-                setIsExpand={setIsExpand}
-                setIsOpen={setIsOpen}
-              />
+              <Mailer isExpand={isExpand} isOpen={isOpen} setIsExpand={setIsExpand} setIsOpen={setIsOpen} />
             </div>
           </Suspense>
         )}
-
         <Footer />
       </body>
     </html>
