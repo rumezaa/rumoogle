@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -46,6 +47,7 @@ export default function Search() {
   ];
 
   // Init the base search tab when the query changes
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const queryTitle =
       displayQuery === "rumezas-projects" ? "rumeza's projects" :
@@ -55,6 +57,7 @@ export default function Search() {
   }, [query]);
 
   // Sync active tab with the ?item= URL param
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!item) {
       setActiveTabId("search");
@@ -68,6 +71,7 @@ export default function Search() {
   }, [item]);
 
   // Migrate legacy ?p= deep links
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (project) {
       const params = new URLSearchParams(searchParams);
@@ -224,6 +228,7 @@ export default function Search() {
             </div>
 
             <div className="hidden w-1/3 p-2 h-[40rem] border-[0.05rem] border-white border-opacity-30 shadow-xl rounded-lg md:flex flex-col gap-y-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={
                     displayQuery == "life"
@@ -240,7 +245,7 @@ export default function Search() {
                       I love building impact-driven, full-stack projects.
                     </h2>
                     <h2 className="opacity-70 text-lg">
-                      Currently, I'm working on specializing my technical skills in ML
+                      Currently, I&apos;m working on specializing my technical skills in ML
                     </h2>
                     <div className="flex flex-col">
                       <h2 className="uppercase tracking-wider text-sm">languages</h2>
@@ -265,7 +270,7 @@ export default function Search() {
                   </div>
                 )) || (
                   <div className="flex flex-col gap-y-3 p-2">
-                    <h2 className="text-xl">"Lead a life worth telling"</h2>
+                    <h2 className="text-xl">&ldquo;Lead a life worth telling&rdquo;</h2>
                     <h2 className="opacity-70 text-lg">
                       This is one of my favourite quotes of all times as it
                       continually motivates me to seek out unqiue, spontaneous

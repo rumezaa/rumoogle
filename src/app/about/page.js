@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const Arrow = () => <span className="text-accent-text mr-2 select-none">↳</span>;
 
@@ -10,7 +11,7 @@ const Co = ({ icon, href, children }) => (
     className="inline-flex items-center gap-x-1 font-bold underline underline-offset-2 decoration-[#ADA6CC] hover:opacity-70 transition-opacity align-middle leading-none text-[#DED7FC] opacity-100"
     style={{ verticalAlign: "middle" }}
   >
-    <img src={`icons/company-icons/${icon}`} alt="" className="w-4 h-4 rounded-sm object-contain flex-shrink-0" />
+    <Image src={`/icons/company-icons/${icon}`} alt="" width={16} height={16} className="rounded-sm object-contain flex-shrink-0" />
     <span>{children}</span>
   </Link>
 );

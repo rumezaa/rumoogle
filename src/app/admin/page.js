@@ -91,6 +91,7 @@ export default function Admin() {
             {staged.map((item, idx) => (
               <div key={idx} className="flex flex-col gap-y-2">
                 <div className="relative aspect-square rounded-lg overflow-hidden bg-dark-purple-300">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={item.preview} alt="" className="w-full h-full object-cover" />
                   <button
                     onClick={() => setStaged((s) => s.filter((_, i) => i !== idx))}

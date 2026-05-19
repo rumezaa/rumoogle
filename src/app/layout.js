@@ -4,6 +4,7 @@ import TabBar from "@/components/TabBar";
 import { TabProvider } from "@/context/TabContext";
 import "./globals.css";
 import { Ropa_Sans } from "next/font/google";
+import Script from "next/script";
 import Footer from "@/components/Footer";
 import Mailer from "@/components/Mailer";
 import { useState, Suspense } from "react";
@@ -27,28 +28,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/icon.ico" type="image/x-icon" sizes="200x256" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <title>rumoogle</title>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-          (function(w,d,s,l,i){
-            w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-TRZSNGGH');
-        `,
-          }}
-        />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RG9NY419T" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8RG9NY419T');`,
-          }}
-        />
         <meta property="og:title" content="Rumoogle" />
         <meta property="og:description" content="everything you'll ever need" />
         <meta property="og:image" content="/Banner.png" />
@@ -67,6 +46,21 @@ export default function RootLayout({ children }) {
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <Script id="gtm" strategy="afterInteractive">{`
+          (function(w,d,s,l,i){
+            w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-TRZSNGGH');
+        `}</Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-8RG9NY419T" strategy="afterInteractive" />
+        <Script id="gtag" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-8RG9NY419T');
+        `}</Script>
         <TabProvider>
           <Suspense><TabBar /></Suspense>
           <Suspense fallback={<div>Loading Header...</div>}>

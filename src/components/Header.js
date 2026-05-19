@@ -305,7 +305,7 @@ export default function Header({ setShowMailer }) {
                     style={{ backgroundImage: `url(head-shot.png)` }}
                     className="rounded-full bg-no-repeat bg-cover w-24 h-24 cursor-pointer"
                   />
-                  <h2 className="text-xl">Hi, I'm Rumeza</h2>
+                  <h2 className="text-xl">Hi, I&apos;m Rumeza</h2>
                 </div>
                 <div className="flex flex-col font-ropaSans-light text-md gap-y-5">
                   <h2 className="text-center">Welcome to my personal site. 💜</h2>

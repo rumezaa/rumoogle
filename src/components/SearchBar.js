@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect, useRef, useMemo } from "react";
@@ -49,6 +50,7 @@ export default function SearchBar({ query, hasItemOpen }) {
 
   const showUnrecognized = trimmed.length > 0 && !isExactMatch && itemResults.length === 0;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (query) {
       const found = searches.find((s) => s.param === query);
