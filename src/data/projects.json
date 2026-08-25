@@ -7,7 +7,12 @@
     "timeline": "Jan 2022 - Mar 2022",
     "searchDescription": "A mobile app that combines community-driven features to help individuals suffering from eating disorders recover · Technovation Girls Semifinalist (Top 8 in Canada) · Python · Kivy · Sentiment Analysis",
     "longDescription": "Using Python Kivy, I developed an Android mobile application, Blu3Whale ED, designed to support individuals with eating disorders. The app integrates the MealDB API to provide an in-app recipe search engine tailored to user input and leverages Firebase for user authentication and a public chat forum. I implemented Python’s NLTK library to create a Naïve Bayes algorithm that classifies user moods (e.g., happy, sad) based on text inputs found in the library's lexicon dictionary and visualized this data using matplotlib, enabling users to track their emotional well-being in their recovery. The app achieved recognition as a Top 8 Semifinalist in Canada for the Technovation Girls Competition.",
-    "tech": ["Python", "Matplotlib", "Numpy", "NLTK"],
+    "tech": [
+      "Python",
+      "Matplotlib",
+      "Numpy",
+      "NLTK"
+    ],
     "links": [
       {
         "link": "https://github.com/rumezaa/blu3whale",
@@ -25,7 +30,12 @@
     "timeline": "Feb 2022 - Jun 2022",
     "searchDescription": "A calendar aggregator made with React and Flask to centralize ongoing events in the YYC tech sector using the Eventbrite API - I'm banned from this API now :(",
     "longDescription": "I developed the backend for YYC Tech Connect, utilizing Flask to manage CRUD operations for the Eventbrite API. The frontend was built with React and Material-UI components to deliver a seamless user experience.",
-    "tech": ["Flask", "EventBrite", "React.js", "Material UI"],
+    "tech": [
+      "Flask",
+      "EventBrite",
+      "React.js",
+      "Material UI"
+    ],
     "links": [
       {
         "link": "https://github.com/rumezaa/mockup",
@@ -43,7 +53,11 @@
     "timeline": "Feb 2023",
     "searchDescription": "A web-app designed to recommend tourists locations and activities based on the weather. Top 3 project for YYCHacks 2023 · TailwindCSS · Express.js · Figma ",
     "longDescription": "We created an Express.js app that leveraged the OpenAI API to recommend activities and tourist destinations in a user's vicinity depending on the weather conditions and temperature. We used Tailwind for styling.",
-    "tech": ["Express.js", "Tailwind CSS", "An API I forgot the name of"],
+    "tech": [
+      "Express.js",
+      "Tailwind CSS",
+      "An API I forgot the name of"
+    ],
     "links": [
       {
         "link": "https://hack2023.vercel.app/",
@@ -99,7 +113,6 @@
       }
     ]
   },
-
   {
     "title": "Bumblebee",
     "alias": "bumblebee",
@@ -129,7 +142,11 @@
     "headline": "Girl builds a fashion circularity app to help local non-profits",
     "timeline": "Jan 2023 - Apr 2023",
     "type": "project",
-    "tech": ["React Native", "Nativewind", "Firebase"],
+    "tech": [
+      "React Native",
+      "Nativewind",
+      "Firebase"
+    ],
     "searchDescription": "A mobile app built to create a pipeline for charities and nonprofits to gain the supplies they need to scale their missions · Technovation Girls Quarterfinalist",
     "longDescription": "I created Renew, a platform that organizes the allocation of excess donations to charities and non-profits. My research in the fashion sustainability space and interviews with niche non-profits revealed that 80% of clothing donations are exported overseas to developing countries, rather than being distributed within our own economy to help scale local charities, non-profits, or aid people in need. I developed a mobile app solution to address this issue by creating a platform that organizes the allocation of excess donations to charities and non-profits. I developed the platform in a week using React Native, Firebase, and Nativewind CSS. I developed a Calendly variation from scratch for scheduling functionality in the app, a direct messaging system, and a browsing page. I have partnered with the local non-profit Good-Neighbor, planning to utilize the app to increase their garment supply and reach more people in need.",
     "links": [
@@ -159,7 +176,11 @@
     "headline": "Hackathon team attempts to align generational communication gap",
     "timeline": "Aug 2024",
     "type": "project",
-    "tech": ["Flask", " React.js", "OpenAI API"],
+    "tech": [
+      "Flask",
+      " React.js",
+      "OpenAI API"
+    ],
     "searchDescription": "A web app designed to bring the functional family therapy online and bridge generational communication gaps · Albert Health Hacks",
     "longDescription": "Inspired by generational communication between parents and children, we created a tool that allows real-time monitoring of your communication with family members, partners, or friends. The tool helps assess how they'll receive your message and suggests the best way to communicate based on their attitudes. Developed prototype in <24 hours using React JS, TailwindCSS, Python, and Open AI API. This app was developed for Albert Health Hacks.",
     "links": [
@@ -183,7 +204,11 @@
     "headline": "University sweats build a workforce reintegration tool under 24 hours",
     "timeline": "Nov 2024",
     "type": "project",
-    "tech": ["Next.js", "Firebase", "Tailwind"],
+    "tech": [
+      "Next.js",
+      "Firebase",
+      "Tailwind"
+    ],
     "searchDescription": "A Next.js app aimed at providing the vulnerable population with the resources and opportunities they need to reintegrate into society · Hack the Change 2024",
     "longDescription": "Our platform onboard vulnerable individuals by listening to their stories and struggles. We use a custom TensorFlow model with 75 input nodes and dual 16-node hidden layers to analyze keyword frequency and emotions in user narratives. This allows us to generate tailored resource, job, and mentor suggestions based on users' experiences and skills. Developed in under 24 hours for Hack the Change 2024, we also engaged with our target demographic (the homeless) to gather feedback on our product.",
     "links": [
@@ -207,7 +232,11 @@
     "headline": "Girl flys to Toronto because she heard Cohere, OpenSesame and Hackathon in the same sentence",
     "timeline": "Nov 2024",
     "type": "project",
-    "tech": ["Next.js", "Tailwind", "Tavus API"],
+    "tech": [
+      "Next.js",
+      "Tailwind",
+      "Tavus API"
+    ],
     "searchDescription": "An AI tutor you can join a call with to explain topics ranging from complicated school problems to real life advice · (not responsible for anything bad AI says <3)",
     "longDescription": "I was one of the 32 people selected to participate in the Hunger Games-style Cohere x Open Sesame Hackathon in Toronto. I flew out for the sole purpose of attending because hackathons make me feel things. We created an AI tutor using the Tavus API that you can join a call with. Simply upload a document ranging from complicated math problems to 2025 mood boards and have a real-time conversation with our assistant.",
     "links": [
@@ -231,8 +260,17 @@
     "headline": "Pre-successful CS sweats compress a 2-month hackathon project into 2 weeks of grind",
     "timeline": "August 2024",
     "type": "project",
-    "searchDescription": "Spend less time planning and more time making memories",
-    "longDescription": "Started in the Google Gemini hackathon. Meetmidway helps friend groups find the optimal midpoint for hangouts by factoring in everyone's location and preferences, then uses Google Gemini to generate a full itinerary — so plans actually leave the group chat.",
+    "tech": [
+      "React",
+      "Flask",
+      "Gemini 1.5 Pro",
+      "Google Maps API",
+      "NumPy",
+      "Firebase",
+      "Tailwind"
+    ],
+    "searchDescription": "Spend less time planning and more time making memories · Built at the Google Gemini Hackathon",
+    "longDescription": "Meetmidway started at the Google Gemini hackathon and then refused to stay a hackathon project — we compressed what was scoped as two months of work into two weeks of grind. The problem is one every friend group has: you spend more time negotiating where to meet than actually meeting. So we built something that takes everyone’s address and preferences and hands back a finished itinerary.",
     "links": [
       {
         "link": "https://github.com/rumezaa/meet-midway",
@@ -254,7 +292,11 @@
     "headline": "Hackathon project to solve my popeyes addiction",
     "timeline": "Feb 2025",
     "type": "project",
-    "tech": ["Typescript", "TailwindCSS", "Tensorflow"],
+    "tech": [
+      "Typescript",
+      "TailwindCSS",
+      "Tensorflow"
+    ],
     "searchDescription": "A chrome extension that blocks your impulsive spends.. with a squirrel game",
     "longDescription": "Started in YYCHacks 2025, CashCorn makes it harder for you to impulsively spend by popping up an annoying squirrel game on your most frequented sites when you click the 'Buy Now' button. We made the Chrome extension using TypeScript and Tailwind CSS and trained our own model to predict whether the URL you're currently visiting has a risk for you to impulsively spend on, based on your financial behaviors. Developed in under 18 hours, got third place.",
     "links": [
@@ -278,7 +320,13 @@
     "headline": "An AI-powered website cloning service that creates pixel-perfect replicas",
     "timeline": "2025",
     "type": "project",
-    "tech": ["Python", "FastAPI", "Playwright", "Next.js", "Anthropic API"],
+    "tech": [
+      "Python",
+      "FastAPI",
+      "Playwright",
+      "Next.js",
+      "Anthropic API"
+    ],
     "searchDescription": "Clone any website with AI: paste a URL, get back the HTML",
     "longDescription": "Peony is a website cloning service that uses AI to generate near pixel-perfect replicas of any site. Paste in a URL and it scrapes the page with Playwright via Browserbase, runs the design through Anthropic's API for analysis, and returns clean HTML with styles preserved. Supports single-page and multi-page cloning with real-time progress streaming. Built with FastAPI on the backend and Next.js on the frontend.",
     "links": [
@@ -296,7 +344,12 @@
     "headline": "Somehow programming a real-time ASL translation model <24h",
     "timeline": "Feb 2026",
     "type": "project",
-    "tech": ["Python", "TensorFlow", "MediaPipe", "VOSK"],
+    "tech": [
+      "Python",
+      "TensorFlow",
+      "MediaPipe",
+      "VOSK"
+    ],
     "searchDescription": "Real-time sign language and speech-to-text translation for video calls",
     "longDescription": "Audibly is an accessibility app that translates American Sign Language and speech to text in real time, outputting to a virtual camera you can plug into Zoom, Teams, or Google Meet. The ASL side uses TensorFlow and MediaPipe for hand gesture and pose detection across 9 recognized signs, with a majority-vote pipeline and text-to-speech output. The speech-to-text side runs on VOSK with support for 10+ languages. Both modes render live captions onto a virtual camera feed so the person on the other end can read along.",
     "links": [

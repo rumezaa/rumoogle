@@ -91,7 +91,7 @@ export default function SearchBar({ query, hasItemOpen }) {
 
   return (
     <div
-      className={`flex ${hasItemOpen ? "flex-row items-center gap-x-3 flex-1 min-w-0" : "flex-col items-center gap-y-6 w-full"} font-ropaSans ${
+      className={`flex ${hasItemOpen ? "flex-row items-center gap-x-2 md:gap-x-3 w-full md:flex-1 min-w-0" : "flex-col items-center gap-y-6 w-full"} font-ropaSans ${
         path === "/" && "relative"
       }`}
       style={{ zIndex: 80 }}
@@ -114,7 +114,7 @@ export default function SearchBar({ query, hasItemOpen }) {
           </button>
           <button
             onClick={() => router.forward()}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-accent-text hover:bg-white hover:bg-opacity-10 transition-colors duration-150"
+            className="w-8 h-8 rounded-full hidden md:flex items-center justify-center text-accent-text hover:bg-white hover:bg-opacity-10 transition-colors duration-150"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -122,7 +122,7 @@ export default function SearchBar({ query, hasItemOpen }) {
           </button>
           <button
             onClick={() => router.refresh()}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-accent-text hover:bg-white hover:bg-opacity-10 transition-colors duration-150"
+            className="w-8 h-8 rounded-full hidden md:flex items-center justify-center text-accent-text hover:bg-white hover:bg-opacity-10 transition-colors duration-150"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M23 4v6h-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -136,7 +136,7 @@ export default function SearchBar({ query, hasItemOpen }) {
         ref={dropdownRef}
         className={`relative flex flex-col items-center shadow-lg ${
           (path !== "/" && hasItemOpen && "flex-1 min-w-0") ||
-          (path !== "/" && !hasItemOpen && "md:absolute w-full top-6 left-48 md:w-1/3 ") ||
+          (path !== "/" && !hasItemOpen && "md:absolute w-full md:top-6 md:left-48 md:w-1/3 ") ||
           "absolute w-10/12 md:w-1/2 lg:w-1/3"
         } ${isFocused ? "rounded-t-3xl rounded-b-none" : "rounded-full"} py-1 bg-accent-color`}
       >

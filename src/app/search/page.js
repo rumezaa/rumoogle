@@ -91,8 +91,8 @@ export default function Search() {
   const activeTab = tabs.find((t) => t.id === activeTabId);
 
   const SearchItem = ({ data }) => (
-    <div className="font-ropaSans flex flex-row gap-x-2" style={{ zIndex: 10 }}>
-      <div className="w-4/5">
+    <div className="font-ropaSans flex flex-row gap-x-3 w-full" style={{ zIndex: 10 }}>
+      <div className="flex-1 min-w-0">
         <div className="flex flex-row items-center gap-x-4">
           <div className="bg-dark-purple-300 rounded-full w-8 h-8 flex items-center justify-center">
             <div className="bg-no-repeat bg-cover w-5 h-5" style={{ backgroundImage: `url(icons/key.svg)` }} />
@@ -115,7 +115,7 @@ export default function Search() {
         alt={`${data.alias} icon`}
         width={96}
         height={90}
-        className="rounded-md w-24 h-24"
+        className="rounded-md w-16 h-16 md:w-24 md:h-24 flex-shrink-0 object-cover self-start"
       />
     </div>
   );

@@ -78,7 +78,11 @@ export default function Header({ setShowMailer }) {
   return (
     <div
       className={`flex ${
-        path !== "/" && !hasItemOpen ? "flex-col-reverse" : "flex-row"
+        path !== "/" && !hasItemOpen
+          ? "flex-col-reverse"
+          : hasItemOpen
+          ? "flex-col"
+          : "flex-row"
       } gap-y-2 gap-x-4 w-full md:flex-row justify-between items-center font-ropaSans text-accent-text p-4 ${
         path === "/" ? "pl-10" : !hasItemOpen ? "pt-8 md:pl-16" : "md:pl-6"
       } relative`}
@@ -87,7 +91,7 @@ export default function Header({ setShowMailer }) {
         style={{ zIndex: 40 }}
         className={`flex ${
           path !== "/" && !hasItemOpen ? "flex-col" : "flex-row"
-        } ${hasItemOpen ? "flex-1 min-w-0" : "w-full"} md:flex-row ${hasItemOpen ? "gap-x-0" : "gap-x-5"} items-center`}
+        } ${hasItemOpen ? "w-full md:flex-1 min-w-0" : "w-full"} md:flex-row ${hasItemOpen ? "gap-x-0" : "gap-x-5"} items-center`}
       >
         {(path === "/" && (
           <Link href="/about" className="cursor-pointer hover:opacity-70 transform transition-all duration-300">
@@ -102,9 +106,17 @@ export default function Header({ setShowMailer }) {
         {path !== "/" && <SearchBar query={displayQuery} hasItemOpen={hasItemOpen} />}
       </div>
 
-      <div className="flex flex-row items-center justify-center gap-x-3">
+      <div
+        className={`flex flex-row items-center gap-x-3 ${
+          hasItemOpen
+            ? "hidden md:flex w-full justify-end md:w-auto"
+            : path !== "/"
+            ? "w-full justify-center md:w-auto"
+            : "justify-center"
+        }`}
+      >
         {path !== "/" && !hasItemOpen && (
-          <Link href="/" className="text-white text-2xl block md:hidden">
+          <Link href="/" className="text-white text-2xl block md:hidden mr-auto">
             (Rum)oogle
           </Link>
         )}

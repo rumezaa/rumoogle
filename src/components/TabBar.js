@@ -40,7 +40,7 @@ export default function TabBar() {
 
   return (
     <div
-      className="flex flex-row items-end bg-dark-purple-200 px-2 pt-2 overflow-x-auto gap-x-1.5"
+      className="hidden md:flex flex-row items-end bg-dark-purple-200 px-2 pt-2 overflow-x-auto gap-x-1.5"
       style={{ scrollbarWidth: "none" }}
     >
       {tabs.map((tab) => {
