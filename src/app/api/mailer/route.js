@@ -1,15 +1,18 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
-import { NextResponse } from "next/server";  // Import NextResponse
+import { NextResponse } from "next/server";
+
+// Visitors' text goes into an HTML email, so escape it.
+const escapeHtml = (value) =>
+  String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 // Export the POST method handler as a named export
 export async function POST(req) {
   const { email, subject, message, cc, bcc } = await req.json();
 
-  // Corrected environment variable names for non-public access
-  const AWS_ACCESS_KEY = process.env.NEXT_PULIC_AWS_ACCESS_KEY;
-  const AWS_ACCESS_KEY_SECRET = process.env.NEXT_PUBLIC_AWS_SECRET;
-
-  console.log(AWS_ACCESS_KEY, AWS_ACCESS_KEY_SECRET)
+  // Server-only credentials. Never prefix these with NEXT_PUBLIC_ and never log them.
+  // (Vercel reserves the standard AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY names.)
+  const AWS_ACCESS_KEY = process.env.SES_ACCESS_KEY_ID;
+  const AWS_ACCESS_KEY_SECRET = process.env.SES_SECRET_ACCESS_KEY;
 
   let sesClient = null;
 
@@ -42,8 +45,8 @@ export async function POST(req) {
       Body: {
         Html: {
           Data: `
-            <li>Return email(s): ${email} ${cc} ${bcc}</li>
-            <p>${message}</p>`,
+            <li>Return email(s): ${escapeHtml(email)} ${escapeHtml(cc)} ${escapeHtml(bcc)}</li>
+            <p>${escapeHtml(message)}</p>`,
           Charset: "UTF-8",
         },
       },
