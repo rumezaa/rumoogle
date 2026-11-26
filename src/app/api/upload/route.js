@@ -1,6 +1,9 @@
 import { writeFile, mkdir, readFile, unlink } from "fs/promises";
 import { join } from "path";
 import { NextResponse } from "next/server";
+import { isAdmin } from "@/lib/auth";
+
+const unauthorized = () => NextResponse.json({ error: "not signed in" }, { status: 401 });
 
 const uploadDir = join(process.cwd(), "public", "life-img");
 const manifestPath = join(process.cwd(), "src", "data", "life-images.json");
@@ -22,6 +25,7 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  if (!isAdmin(request)) return unauthorized();
   const formData = await request.formData();
   const file = formData.get("file");
   const caption = formData.get("caption") || "";
@@ -41,6 +45,7 @@ export async function POST(request) {
 }
 
 export async function PATCH(request) {
+  if (!isAdmin(request)) return unauthorized();
   const { filename, caption } = await request.json();
   if (!filename) return NextResponse.json({ error: "No filename" }, { status: 400 });
 
@@ -53,6 +58,7 @@ export async function PATCH(request) {
 }
 
 export async function DELETE(request) {
+  if (!isAdmin(request)) return unauthorized();
   const { filename } = await request.json();
   if (!filename) return NextResponse.json({ error: "No filename" }, { status: 400 });
 

@@ -60,7 +60,10 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen font-ropaSans text-white px-6 py-10 max-w-4xl mx-auto">
-      <h1 className="text-3xl mb-1">Admin</h1>
+      <div className="flex items-baseline justify-between mb-1">
+        <h1 className="text-3xl">Admin</h1>
+        <a href="/admin/write" className="text-sm text-accent-text hover:text-white">write a post →</a>
+      </div>
       <p className="text-accent-text text-sm mb-8">Life images — shown in the Images tab on search.</p>
 
       {/* Upload zone */}
