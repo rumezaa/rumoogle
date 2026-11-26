@@ -3,23 +3,22 @@
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import projects from "../../data/projects.json";
 import experiences from "../../data/experience.json";
-import life from "../../data/life.json";
+import { projects, life, linkIcon } from "@/lib/content";
+import Markdown from "@/components/Markdown";
 import Image from "next/image";
 import { useTabs } from "@/context/TabContext";
 
 export default function Search() {
-  const [isHover, setIsHover] = useState({});
   const searchParams = useSearchParams();
   const router = useRouter();
   const query = searchParams.get("q");
   const project = searchParams.get("p");
   const displayQuery = query ? query : "";
   const displayData =
-    (displayQuery == "rumezas-projects" && [...projects]?.reverse()) ||
+    (displayQuery == "rumezas-projects" && projects) ||
     (displayQuery == "experience" && experiences) ||
-    (displayQuery == "life" && [...life]?.reverse());
+    (displayQuery == "life" && life);
 
   const view = searchParams.get("view") || "all";
   const [lifeImages, setLifeImages] = useState([]);
@@ -121,52 +120,59 @@ export default function Search() {
   );
 
   const ItemDetail = ({ data }) => (
-    <div className="flex flex-col w-full px-4 md:px-16 py-6 gap-y-5">
-      <div className="relative w-full h-56 md:h-80 rounded-lg overflow-hidden bg-dark-purple-300">
-        <Image
-          src={`/search-img/${data.alias}-banner.png`}
-          alt={`${data.alias} banner`}
-          layout="fill"
-          objectFit="contain"
-          priority
-        />
-      </div>
-      <div className="flex flex-col gap-y-3 max-w-3xl">
-        <h2 className="text-2xl">{data.title}</h2>
-        {data.links?.length > 0 && (
-          <div className="flex flex-row gap-x-2 flex-wrap gap-y-2">
-            {data.links.map((link, idx) => (
-              <Link
-                key={idx}
-                className={`flex flex-row py-1.5 px-3 text-sm font-medium items-center gap-x-2 rounded border border-stone-700 transform transition-all duration-300 ${
-                  link.name === "github"
-                    ? "bg-dark-purple-300 hover:bg-[#4D456E] border-dark-purple-300 flex-row-reverse"
-                    : "bg-white text-dark-purple-100 hover:bg-stone-200 hover:text-dark-purple-300"
-                }`}
-                href={link.link}
-                target="_blank"
-                onMouseEnter={() => setIsHover((h) => ({ ...h, [idx]: true }))}
-                onMouseLeave={() => setIsHover((h) => ({ ...h, [idx]: false }))}
-              >
-                <h2>{link.name}</h2>
-                <div
-                  className={`bg-no-repeat bg-cover ${link.name === "video" ? "w-6 h-6" : "w-4 h-4"}`}
-                  style={{ backgroundImage: `url(icons/${isHover[idx] ? link.urlHover : link.url})` }}
-                />
-              </Link>
-            ))}
+    <div className="w-full min-h-full bg-[#FAF8F5] text-[#2B273C]">
+      <div className="flex flex-col w-full px-4 md:px-16 py-6 gap-y-5">
+        <div className="relative w-full h-56 md:h-80 rounded-lg overflow-hidden bg-[#EFEBE4]">
+          <Image
+            src={`/search-img/${data.alias}-banner.png`}
+            alt={`${data.alias} banner`}
+            fill
+            className="object-contain"
+            priority
+            // posts without a banner image just skip the banner
+            onError={(e) => (e.currentTarget.parentElement.style.display = "none")}
+          />
+        </div>
+        <article className="flex flex-col gap-y-3 max-w-3xl">
+          <div>
+            <h1 className="text-3xl md:text-4xl text-[#1D1B28]">{data.headline}</h1>
+            <p className="text-sm text-[#6B6485] mt-1">{[data.title, data.timeline].filter(Boolean).join(" · ")}</p>
           </div>
-        )}
-        <p className="font-thin text-white opacity-80 leading-relaxed whitespace-pre-line">{data.longDescription}</p>
-        {data.tech?.length > 0 && (
-          <div className="flex flex-row flex-wrap gap-2 mt-1">
-            {data.tech.map((stack, idx) => (
-              <div key={idx} className="bg-white bg-opacity-10 text-accent-text text-sm p-1 rounded">
-                {stack}
-              </div>
-            ))}
+          {data.links?.length > 0 && (
+            <div className="flex flex-row gap-x-2 flex-wrap gap-y-2">
+              {data.links.map((link, idx) => (
+                <Link
+                  key={idx}
+                  className={`flex flex-row py-1.5 px-3 text-sm font-medium items-center gap-x-2 rounded border transition-all duration-300 ${
+                    link.name === "github"
+                      ? "bg-dark-purple-300 text-white hover:bg-[#4D456E] border-dark-purple-300 flex-row-reverse"
+                      : "bg-white text-dark-purple-100 border-[#D9D3E8] hover:bg-stone-100"
+                  }`}
+                  href={link.link}
+                  target="_blank"
+                >
+                  <span>{link.name}</span>
+                  <div
+                    className={`bg-no-repeat bg-cover ${link.name === "video" ? "w-6 h-6" : "w-4 h-4"}`}
+                    style={{ backgroundImage: `url(icons/${linkIcon(link)})` }}
+                  />
+                </Link>
+              ))}
+            </div>
+          )}
+          <div className="mt-2">
+            <Markdown>{data.longDescription}</Markdown>
           </div>
-        )}
+          {data.tech?.length > 0 && (
+            <div className="flex flex-row flex-wrap gap-2 mt-1">
+              {data.tech.map((stack, idx) => (
+                <div key={idx} className="bg-[#2B273C] bg-opacity-5 text-[#4D456E] text-sm p-1 rounded">
+                  {stack}
+                </div>
+              ))}
+            </div>
+          )}
+        </article>
       </div>
     </div>
   );

@@ -4,8 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import projects from "../data/projects.json";
-import life from "../data/life.json";
+import { projects, life } from "@/lib/content";
 import experiences from "../data/experience.json";
 
 export default function SearchBar({ query, hasItemOpen }) {
