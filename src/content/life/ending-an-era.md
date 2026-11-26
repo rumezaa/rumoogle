@@ -4,7 +4,6 @@ headline: 'I love what I can do and who I can do it with'
 timeline: 'Nov 25 2026'
 searchDescription: 'love-letter to all of the creative people that have influenced me so far'
 date: '2026-11-25'
-draft: true
 ---
 
 > Put a track athlete on a track, and they'll run relative to their peers. When you're running with fast people, you run faster.
