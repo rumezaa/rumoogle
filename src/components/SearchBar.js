@@ -53,7 +53,8 @@ export default function SearchBar({ query, hasItemOpen }) {
   useEffect(() => {
     if (query) {
       const found = searches.find((s) => s.param === query);
-      if (found) setInputValue(found.search);
+      // keep what was typed in the box, like a real results page
+      setInputValue(found ? found.search : query);
     }
   }, [query]);
 
@@ -83,7 +84,7 @@ export default function SearchBar({ query, hasItemOpen }) {
       router.push(`/search?q=${encodeURIComponent(matched.param)}`);
       setIsFocused(false);
     } else if (trimmed) {
-      router.push(`/wrong-search`);
+      router.push(`/wrong-search?q=${encodeURIComponent(trimmed)}`);
       setIsFocused(false);
     }
   };

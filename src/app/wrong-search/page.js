@@ -1,56 +1,64 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 const suggestions = [
   { label: "rumeza's projects", href: "/search?q=rumezas-projects" },
   { label: "life", href: "/search?q=life" },
 ];
 
+// "No results" page, laid out like a search results page.
 export default function WrongSearch() {
-  const router = useRouter();
+  const query = useSearchParams().get("q");
 
   return (
-    <div className="flex flex-col w-full min-h-full justify-center items-center font-ropaSans text-white px-6 gap-y-10">
-
-      {/* Main message */}
-      <div className="flex flex-col items-center gap-y-3 text-center">
-        <p className="text-8xl select-none">=/
-        </p>
-        <h1 className="text-4xl md:text-5xl font-medium">hi - are you okay?</h1>
-        <p className="text-accent-text text-lg max-w-sm leading-relaxed">
-          why did you search something that&apos;s not me?
-        </p>
+    <div className="flex flex-col w-full font-ropaSans text-white">
+      <div className="px-4 md:pl-48 border-b border-white border-opacity-10">
+        <span className="inline-block px-3 py-2.5 text-sm border-b-2 -mb-px border-[#ADA6CC]">All</span>
       </div>
 
-      {/* Suggestions */}
-      <div className="flex flex-col w-full max-w-sm gap-y-2">
-        {suggestions.map((s) => (
-          <Link
-            key={s.href}
-            href={s.href}
-            className="flex items-center gap-x-3 px-4 py-3 rounded-xl bg-accent-color border border-white border-opacity-5 hover:bg-white hover:bg-opacity-5 transition duration-200 group"
-          >
-            <div
-              className="bg-no-repeat bg-cover w-4 h-4 flex-shrink-0 opacity-50 group-hover:opacity-80 transition-opacity"
-              style={{ backgroundImage: "url(icons/trending.svg)" }}
-            />
-            <span className="text-sm text-[#E5DFFF]">{s.label}</span>
-            <svg className="ml-auto opacity-30 group-hover:opacity-70 transition-opacity" width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-        ))}
+      <div className="px-4 md:pl-48 py-8 max-w-3xl flex flex-col gap-y-6 text-[15px] leading-relaxed">
+        <p className="text-accent-text text-sm">About 0 results (0.18 seconds)</p>
+
+        <p className="text-lg">
+          Your search
+          {query ? (
+            <>
+              {" "}- <span className="font-bold text-white">{query}</span> -{" "}
+            </>
+          ) : " "}
+          did not match any documents.
+        </p>
+
+        <div className="flex flex-col gap-y-1 text-[#E5DFFF]">
+          <p>Suggestions:</p>
+          <ul className="list-disc pl-10 flex flex-col gap-y-0.5">
+            <li>Make sure all words are spelled correctly.</li>
+            <li>Try different keywords.</li>
+            <li>Try more general keywords.</li>
+            <li>Try searching for something about rumeza.</li>
+          </ul>
+        </div>
+
+        <div className="flex flex-col gap-y-3 pt-2">
+          <p className="text-accent-text text-sm">Try searching for</p>
+          <div className="flex flex-wrap gap-2">
+            {suggestions.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="flex items-center gap-x-2 pl-3 pr-4 py-2 rounded-full bg-accent-color border border-white border-opacity-10 hover:bg-white hover:bg-opacity-10 transition-colors duration-150 text-sm text-[#E5DFFF]"
+              >
+                <div
+                  className="bg-no-repeat bg-cover w-4 h-4 opacity-60"
+                  style={{ backgroundImage: "url(icons/search.svg)" }}
+                />
+                {s.label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
-
-      {/* Back button */}
-      <button
-        onClick={() => router.back()}
-        className="text-sm text-accent-text hover:text-white transition-colors duration-200 underline underline-offset-4"
-      >
-        ← go back
-      </button>
-
     </div>
   );
 }
