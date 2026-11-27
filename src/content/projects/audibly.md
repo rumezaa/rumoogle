@@ -82,12 +82,14 @@ Config values in asl.py
 ![image](/blog-img/audibly-1795738765326.png)
 
 
-Step 5: the data problem comes back
-
+#### Generational lock in
+#### 
 At this point, I was feeling pretty good about where the model was going, but at 11 p.m., when we connected the inferencing to the video stream, it mostly fell apart. Signs were coming back as the wrong words. The model wasn't unsure; it was confidently wrong, which is how I knew the problem was the data and not the model.
 
 TL;DR: training data was lowkey kinda shit, but I also should have put in this step before since I did do it with other CNN problems.  I made the training data worse on purpose. I added noise, jitter and rotations so the model saw messy versions of every sign, and recognition on live calls got so much better.
 
+
+![image](/blog-img/audibly-1795738963613.png)
 
 ![image](/blog-img/audibly-1795738912170.png)
 
@@ -100,6 +102,6 @@ Sending frames to the virtual camera
 
 What I learned
 
-We placed top 3 out of 100+ teams at Hack The Bias! The biggest thing I took away from it: don't trust results from an environment you built yourself. Test it where it's actually going to live.
+We placed top 3 out of 100+ teams at Hack The Bias! This was a pretty fun projects and lots of condensed learning in a short period. What was most intriguing to me was turning video data into snapshot frames and I'm interested to see if this is something that other real-time camera-feed-oriented inferencing (i just made that up sorry if it's not real) pipelines did for their training.
 
 Built with Python, TensorFlow, MediaPipe, OpenCV, VOSK and pyvirtualcam.
