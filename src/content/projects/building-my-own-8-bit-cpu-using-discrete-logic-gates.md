@@ -17,12 +17,14 @@ So naturally, it set off this aha moment in me to go deeper into understanding h
 
 I've felt like I haven't been technically challenged as much as I'd like to. I wanted a project I could really sink into, where almost everything is unknown territory. I want it to open up new possibilities for me technically and pull me out of the domain I'm so familiar with.
 
-![image](/blog-img/building-my-own-8-bit-cpu-using-discrete-logic-gates-1795802946881.png)
 
 
 ### How I'm getting started
 
 I'm using Ben Eater's [guide](https://eater.net/) for building the CPU on a breadboard, but making a few design adjustments to fit within the parts I have and goals I have for this project.
+
+![image](/blog-img/building-my-own-8-bit-cpu-using-discrete-logic-gates-1795802946881.png)
+
 
 ### Goals
 
@@ -48,14 +50,4 @@ Scale that up into a tiny systolic array (a grid of MAC units, the same idea ins
 
 ### What I'm trying to get out of this
 
-I think as our technology has become more ingrained into the naturalness of our routines, the next big thing will be to make all of these interactions we have with intelligent systems *come alive*. I dream of working at the companies that are making that possible right now, but I realized the current technical proficiency I have doesn't even let me scrape the surface of what it means to be an engineer at these companies. I hope by seeing this project through end to end I'll be able to learn a system, a process, and then be able to judge what I enjoyed most.
-
-### Tech stack
-
-- **Timing:** NE555 timers
-- **Logic:** 74LS series chips (74LS04 NOT, 74LS08 AND, 74LS32 OR, 74LS173 registers, 74LS245 bus buffers, 74LS283 adders, 74LS86 XOR)
-- **Build:** 830-point breadboards, 22 AWG solid-core wire, a 5V breadboard power supply
-- **Debugging:** a multimeter and a DIY LED probe (you'll see why)
-- **Next:** Verilog, Python + cocotb for testbenches, an FPGA board
-
-Next up we'll talk in depth about each module, starting with the clock, aka the part that took me way longer than it should have 🙃
+I think as our technology has become more ingrained into the naturalness of our routines, the next big thing will be to make all of these interactions we have with intelligent systems *come alive*. I dream of working at the companies that are making that possible right now, but I realized the current technical proficiency I have doesn't even let me scrape the surface of what it means to be an engineer at these companies. I hope by seeing this project through end to end I'll be able to learn a system, a process, and then be able to judge what I enjoyed most. 🙃
