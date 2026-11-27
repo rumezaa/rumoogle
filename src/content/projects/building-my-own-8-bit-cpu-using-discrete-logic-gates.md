@@ -17,8 +17,8 @@ So naturally, it set off this aha moment in me to go deeper into understanding h
 
 I've felt like I haven't been technically challenged as much as I'd like to. I wanted a project I could really sink into, where almost everything is unknown territory. I want it to open up new possibilities for me technically and pull me out of the domain I'm so familiar with.
 
-![the clock module and A register wired together on breadboards](img/clock-and-register.jpg)
-*Current state of things (it's a lot of wires)*
+![image](/blog-img/building-my-own-8-bit-cpu-using-discrete-logic-gates-1795802946881.png)
+)
 
 ### How I'm getting started
 
