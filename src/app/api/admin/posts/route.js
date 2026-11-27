@@ -52,7 +52,7 @@ export async function PUT(request) {
   const denied = guard(request);
   if (denied) return denied;
 
-  const { collection, alias, meta, body, isNew } = await request.json();
+  const { collection, alias, meta, body, updates, isNew } = await request.json();
   const invalid = validate(collection, alias);
   if (invalid) return NextResponse.json({ error: invalid }, { status: 400 });
   if (!meta?.headline) return NextResponse.json({ error: "a headline is required" }, { status: 400 });
@@ -64,7 +64,7 @@ export async function PUT(request) {
 
   const verb = isNew ? "add" : "update";
   const result = await commitFiles(
-    [{ path: filePath, content: serializePost(meta, body) }],
+    [{ path: filePath, content: serializePost(meta, body, collection === "projects" ? updates : []) }],
     `content(${collection}): ${verb} ${alias}${meta.draft ? " (draft)" : ""}`
   );
   return NextResponse.json({ ok: true, mode: storageMode(), ...result });

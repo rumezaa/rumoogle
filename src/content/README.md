@@ -33,6 +33,23 @@ Write the post here.
 
 Keep quotes around frontmatter values, especially when they contain a `:`.
 
+## Project updates
+
+Projects can have an updates thread, shown oldest first under the write-up.
+In the editor, use "+ add update". By hand, add marker lines after the write-up:
+
+```md
+The main write-up…
+
+<!-- update: 2025-03-01 -->
+First prototype done.
+
+<!-- update: 2025-06-02 | v1 shipped -->
+Got **100 users** in a week.
+```
+
+The text after `|` is an optional label. The marker lines are hidden when GitHub shows the file.
+
 ## Images
 
 Each post needs two images in `public/search-img/`:

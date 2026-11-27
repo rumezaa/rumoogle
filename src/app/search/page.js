@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import experiences from "../../data/experience.json";
 import { projects, life, linkIcon } from "@/lib/content";
 import Markdown from "@/components/Markdown";
+import UpdatesThread from "@/components/UpdatesThread";
 import Image from "next/image";
 import { useTabs } from "@/context/TabContext";
 
@@ -98,7 +99,10 @@ export default function Search() {
           </div>
           <div className="font-light leading-tight">
             <h2>{data.title}</h2>
-            <h2 className="opacity-75 text-sm">{data.timeline}</h2>
+            <h2 className="opacity-75 text-sm">
+              {data.timeline}
+              {data.updates?.length > 0 && ` · ${data.updates.length} update${data.updates.length > 1 ? "s" : ""}`}
+            </h2>
           </div>
         </div>
         <h2
@@ -172,6 +176,7 @@ export default function Search() {
               ))}
             </div>
           )}
+          <UpdatesThread updates={data.updates} />
         </article>
       </div>
     </div>

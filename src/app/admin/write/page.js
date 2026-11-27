@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import Markdown from "@/components/Markdown";
+import UpdatesThread from "@/components/UpdatesThread";
 
 const COLLECTIONS = [
   { id: "life", label: "life", urlParam: "thing", q: "life" },
@@ -14,7 +15,7 @@ const slugify = (s) =>
 
 const emptyForm = () => ({
   alias: "", title: "", type: "", headline: "", timeline: "", searchDescription: "",
-  date: today(), draft: false, tech: "", links: [], body: "",
+  date: today(), draft: false, tech: "", links: [], body: "", updates: [],
 });
 
 const toForm = (post) => ({
@@ -29,6 +30,7 @@ const toForm = (post) => ({
   tech: (post.meta.tech || []).join(", "),
   links: (post.meta.links || []).map((l) => ({ name: l.name || "", link: l.link || "" })),
   body: post.body || "",
+  updates: (post.updates || []).map((u) => ({ date: u.date, label: u.label || "", body: u.body || "" })),
 });
 
 const toMeta = (f) => ({
@@ -65,6 +67,9 @@ export default function Write() {
   const [view, setView] = useState("write"); // mobile: write | preview
 
   const textareaRef = useRef(null);
+  const updateRefs = useRef([]);
+  // which textarea the toolbar acts on: the main body or one of the updates
+  const activeField = useRef({ kind: "body" });
   const inlineImageRef = useRef(null);
   const isNew = selected === "new";
   const dirty = savedForm !== null && JSON.stringify(form) !== JSON.stringify(savedForm);
@@ -141,10 +146,16 @@ export default function Write() {
   // ---- toolbar ----------------------------------------------------------
 
   const edit = (fn) => {
-    const ta = textareaRef.current;
+    const target = activeField.current;
+    const ta = target.kind === "update" ? updateRefs.current[target.index] : textareaRef.current;
+    if (!ta) return;
     const { selectionStart: start, selectionEnd: end, value } = ta;
     const { text, selStart, selEnd } = fn(value, start, end);
-    setForm((f) => ({ ...f, body: text }));
+    setForm((f) =>
+      target.kind === "update"
+        ? { ...f, updates: f.updates.map((u, i) => (i === target.index ? { ...u, body: text } : u)) }
+        : { ...f, body: text }
+    );
     requestAnimationFrame(() => {
       ta.focus();
       ta.setSelectionRange(selStart, selEnd);
@@ -192,6 +203,29 @@ export default function Write() {
     if (e.key === "s") { e.preventDefault(); save(); }
   };
 
+  // ---- updates (projects only) ----------------------------------------
+
+  const setUpdate = (index, key, value) =>
+    setForm((f) => ({ ...f, updates: f.updates.map((u, i) => (i === index ? { ...u, [key]: value } : u)) }));
+
+  const addUpdate = () => {
+    const index = form.updates.length;
+    setForm((f) => ({ ...f, updates: [...f.updates, { date: today(), label: "", body: "" }] }));
+    activeField.current = { kind: "update", index };
+    requestAnimationFrame(() => updateRefs.current[index]?.focus());
+  };
+
+  const removeUpdate = (index) => {
+    if (!window.confirm("Remove this update?")) return;
+    activeField.current = { kind: "body" };
+    setForm((f) => ({ ...f, updates: f.updates.filter((_, i) => i !== index) }));
+  };
+
+  const pasteImage = (e) => {
+    const file = [...e.clipboardData.files].find((f) => f.type.startsWith("image/"));
+    if (file) { e.preventDefault(); uploadInline(file); }
+  };
+
   // ---- uploads ----------------------------------------------------------
 
   const upload = async (file, kind) => {
@@ -228,7 +262,7 @@ export default function Write() {
     const res = await fetch("/api/admin/posts", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ collection, alias: form.alias, meta: toMeta(form), body: form.body, isNew }),
+      body: JSON.stringify({ collection, alias: form.alias, meta: toMeta(form), body: form.body, updates: form.updates, isNew }),
     });
     const data = await res.json();
     if (!res.ok) return setStatus({ kind: "error", text: data.error });
@@ -461,22 +495,58 @@ export default function Write() {
 
             {/* body + preview */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <textarea
-                ref={textareaRef}
-                value={form.body}
-                onChange={(e) => set("body", e.target.value)}
-                onKeyDown={onKeyDown}
-                onPaste={(e) => {
-                  const file = [...e.clipboardData.files].find((f) => f.type.startsWith("image/"));
-                  if (file) { e.preventDefault(); uploadInline(file); }
-                }}
-                placeholder="start writing… (paste an image to add it)"
-                className={`${input} min-h-[60vh] font-mono text-[15px] leading-relaxed resize-y ${view === "preview" ? "hidden lg:block" : ""}`}
-              />
+              <div className={`flex flex-col gap-y-4 ${view === "preview" ? "hidden lg:flex" : ""}`}>
+                <textarea
+                  ref={textareaRef}
+                  value={form.body}
+                  onChange={(e) => set("body", e.target.value)}
+                  onFocus={() => (activeField.current = { kind: "body" })}
+                  onKeyDown={onKeyDown}
+                  onPaste={pasteImage}
+                  placeholder="start writing… (paste an image to add it)"
+                  className={`${input} min-h-[60vh] font-mono text-[15px] leading-relaxed resize-y`}
+                />
+
+                {collection === "projects" && (
+                  <div className="flex flex-col gap-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className={label}>updates thread · oldest first</span>
+                      <button className={btn} onClick={addUpdate}>+ add update</button>
+                    </div>
+                    {form.updates.length === 0 && (
+                      <p className="text-sm text-accent-text opacity-60">
+                        Post progress here as the project grows: launches, milestones, wins.
+                      </p>
+                    )}
+                    {form.updates.map((u, i) => (
+                      <div key={i} className="flex flex-col gap-y-2 rounded-lg border border-white border-opacity-10 p-3">
+                        <div className="flex gap-2">
+                          <input type="date" className={`${input} !w-40 flex-shrink-0`} value={u.date} onChange={(e) => setUpdate(i, "date", e.target.value)} />
+                          <input className={`${input} min-w-0`} value={u.label} placeholder="label (optional): v1 shipped…" onChange={(e) => setUpdate(i, "label", e.target.value)} />
+                          <button className={`${btn} flex-shrink-0`} title="Remove update" onClick={() => removeUpdate(i)}>✕</button>
+                        </div>
+                        <textarea
+                          ref={(el) => (updateRefs.current[i] = el)}
+                          value={u.body}
+                          onChange={(e) => setUpdate(i, "body", e.target.value)}
+                          onFocus={() => (activeField.current = { kind: "update", index: i })}
+                          onKeyDown={onKeyDown}
+                          onPaste={pasteImage}
+                          placeholder="what happened? (the toolbar works here too)"
+                          className={`${input} min-h-[8rem] font-mono text-[15px] leading-relaxed resize-y`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
               <div className={`bg-[#FAF8F5] rounded-lg px-6 py-5 min-h-[60vh] overflow-auto ${view === "write" ? "hidden lg:block" : ""}`}>
                 <h1 className="text-3xl text-[#1D1B28]">{form.headline || <span className="opacity-30">headline</span>}</h1>
                 <p className="text-sm text-[#6B6485] mt-1 mb-5">{[form.title, form.timeline].filter(Boolean).join(" · ")}</p>
                 <Markdown resolveSrc={resolveSrc}>{form.body}</Markdown>
+                {collection === "projects" && (
+                  <UpdatesThread updates={form.updates.filter((u) => u.body || u.label)} resolveSrc={resolveSrc} />
+                )}
               </div>
             </div>
 
