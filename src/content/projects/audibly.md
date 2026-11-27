@@ -83,7 +83,7 @@ Config values in asl.py
 
 
 #### Generational lock in
-#### 
+ 
 At this point, I was feeling pretty good about where the model was going, but at 11 p.m., when we connected the inferencing to the video stream, it mostly fell apart. Signs were coming back as the wrong words. The model wasn't unsure; it was confidently wrong, which is how I knew the problem was the data and not the model.
 
 TL;DR: training data was lowkey kinda shit, but I also should have put in this step before since I did do it with other CNN problems.  I made the training data worse on purpose. I added noise, jitter and rotations so the model saw messy versions of every sign, and recognition on live calls got so much better.
