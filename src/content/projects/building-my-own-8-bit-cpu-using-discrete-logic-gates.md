@@ -22,5 +22,13 @@ I want to be smarter, and this project makes me feel like there will be a lot to
 ### How I'm getting started
 I'm using Ben Eater's [guide](https://eater.net/) for building the CPU on a breadboard, but making a few design adjustments to fit within the parts I have and goals I have for this project. 
 
-### What I'm adding to this project
-CPU Build -> translate each
+### Goals 
+#### ***CPU build:*** 
+the full 8-bit computer on breadboards, out of individual logic chips. No microcontroller, no kit. Clock, registers, ALU, RAM, program counter, and the control logic that ties it all together
+- My own assembly code: design the instruction set myself, write programs in my own assembly, and build a little assembler in Python that turns it into the 1s and 0s I flip into RAM
+- Verilog: right after I build each module for real, I'll rewrite it in Verilog and test it with Python (cocotb) so the code behaves exactly like the hardware on my desk
+- MAC unit: a multiply-accumulate unit so it can do dot products, which is lowkey the core math behind every neural network
+- FPGA: scale that up into a tiny systolic array (a grid of MAC units, the same idea inside AI chips like the ones at Tenstorrent) and run a small neural net on hardware I designed myself
+
+### What I'm trying to get out of this
+I dream of working at companies like [], [],but I realized the current technical profiency I have doesn't even let me scrape the surface of what it means ot be an engineer at these companies. I hope by seeing this project thorugh end to end I'll be able to learn a system, a process and then be able to jude what I enjoye dmost
