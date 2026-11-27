@@ -100,7 +100,7 @@ The last piece was getting the captions somewhere people would actually see them
 
 Sending frames to the virtual camera
 
-What I learned
+#### **What I learned**
 
 We placed top 3 out of 100+ teams at Hack The Bias! This was a pretty fun projects and lots of condensed learning in a short period. What was most intriguing to me was turning video data into snapshot frames and I'm interested to see if this is something that other real-time camera-feed-oriented inferencing (i just made that up sorry if it's not real) pipelines did for their training.
 
