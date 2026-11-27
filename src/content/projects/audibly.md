@@ -1,7 +1,7 @@
 ---
 title: 'Audibly'
 type: 'project'
-headline: 'Somehow programming a real-time ASL translation model <24h'
+headline: 'Somehow programming a real-time WASL translation model <24h'
 timeline: 'Feb 2026'
 searchDescription: 'Real-time sign language and speech-to-text translation for video calls'
 date: '2026-02-01'
