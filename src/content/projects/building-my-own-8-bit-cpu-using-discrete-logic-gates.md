@@ -17,18 +17,26 @@ First internship I had where I got to build on top of something physical, and I 
 
 So naturally, it set off this aha moment in me to go deeper into understanding how the f all of this works, especially as someone who's been pure software forrrr around 4 years now. I've always admired the individuals around me who've disassembled things to their core to understand how things work
 
-I want to be smarter, and this project makes me feel like there will be a lot to learn, especially since there's so much unknown territory for me going into this. I want it to open up new possibilities for me technically and move away from teh technical domain I'm so familiar with 
+I've felt like I haven't technically challnged as much as I'd like to. I wanted a project I could really sink into, where almost everything is unknown territory. I want it to open up new possibilities for me technically and pull me out of the domain I'm so familiar with.
 
 ### How I'm getting started
 I'm using Ben Eater's [guide](https://eater.net/) for building the CPU on a breadboard, but making a few design adjustments to fit within the parts I have and goals I have for this project. 
 
 ### Goals 
-#### ***CPU build:*** 
-the full 8-bit computer on breadboards, out of individual logic chips. No microcontroller, no kit. Clock, registers, ALU, RAM, program counter, and the control logic that ties it all together
-- My own assembly code: design the instruction set myself, write programs in my own assembly, and build a little assembler in Python that turns it into the 1s and 0s I flip into RAM
-- Verilog: right after I build each module for real, I'll rewrite it in Verilog and test it with Python (cocotb) so the code behaves exactly like the hardware on my desk
-- MAC unit: a multiply-accumulate unit so it can do dot products, which is lowkey the core math behind every neural network
-- FPGA: scale that up into a tiny systolic array (a grid of MAC units, the same idea inside AI chips like the ones at Tenstorrent) and run a small neural net on hardware I designed myself
+#### CPU build 
+the full 8-bit computer on breadboards, out of individual logic chips i bought after doom scrolling on ali aexpress yay. Clock, registers, ALU, RAM, program counter, and the control logic that ties it all together
+
+#### My own assembly code
+I want to be able to run something on this design, so I'll create an instruction set myself, write programs in my own assembly, and build a little assembler in Python that turns it into the 1s and 0s I flip into RAM
+
+#### Verilog
+For each module I build, I'll rewrite it in Verilog and test it with Python (cocotb) so the code behaves exactly like the hardware on my desk
+
+**MAC unit**
+A multiply-accumulate unit so it can do dot products (which is  the core math behind every neural network). This unit is at the core of a lot of the AI-forward chips we've been seeing from tenstorrent, nvidia, google, so I wanna build one too.
+
+#### FPGA
+Scale that up into a tiny systolic array (a grid of MAC units, the same idea inside AI chips like the ones at Tenstorrent) and run a small neural net on hardware I designed myself
 
 ### What I'm trying to get out of this
 I dream of working at companies like [], [],but I realized the current technical profiency I have doesn't even let me scrape the surface of what it means ot be an engineer at these companies. I hope by seeing this project thorugh end to end I'll be able to learn a system, a process and then be able to jude what I enjoye dmost
