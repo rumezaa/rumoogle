@@ -3,10 +3,13 @@ title: '8-bit cpu'
 type: 'project'
 headline: 'Building my own 8-bit cpu using discrete logic gates'
 timeline: 'Nov 27'
+searchDescription: 'Unpacking compute, and learning the core of our modern machine + ai chips'
 date: '2026-11-27'
 tech:
   - 'Verilog'
   - 'C'
+  - 'Assembly'
+  - 'FPGA'
 ---
 
 Earlier this year I worked at [Tenstorrent](https://tenstorrent.com/en). Great company btw.
